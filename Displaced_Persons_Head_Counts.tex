@@ -18,11 +18,26 @@
 
 \newpage
 
+\section{Executive Summary}
+\begin{multicols}{2}
+We interviewed ten teams---four MSF and six from other agencies---working in contexts of displacement in East Africa, mainly closed (camp-like) settings. In most cases they considered a population estimate important to their work, though the perceived utility and use-case varied; the most compelling use-cases being for resource allocation (food, NFIs, etc) and public health (vaccination and health coverage). 
+
+Most teams reported at least some dissatisfaction with existing "traditional" methods of conducting population estimates or head counts. Most reported bias in the available sources; people, agencies, and governments often have incentives to manipulate these numbers. 
+
+Attitudes toward technological methods such as drones and mobile device-based surveys varied from considering them out of the question to regarding them as potential avenues to escape the usual pitfalls. In some cases teams within the same country perceived the risks quite differently, suggesting that the risks are not actually well-known or consistently analysed. 
+
+We propose a typology of contexts and needs to determine where technological head count methods may be useful (helping create positive impact for displaced people) and practicable (safe, ethically permissible, and achievable). Furthermore we propose some methods whereby these methods can be selected and undertaken.
+
+We suggest attempting to choose one or more sites where a simple pilot can be conducted using one or both of the aerial drone and community-driven mobile device-based surveying\footnote{MSF and other agencies already have substantial expertise and capacity to implement mobile device-based surveys using OpenDataKit, KoBo Toolbox, MWater, CommCare, and other platforms. However, doing so primarily using relatively uneducated and untrained people from within the displaced community itself seems to be rare.}. We provide some guidance on practical implementation of these methods, including cost estimates and a risk assessment framework.
+
+\end{multicols}
+
+\newpage
 \section{Introduction}
 \begin{multicols}{2}
 MSF often needs to know the number of displaced people in a camp, settlement, Protection of Civilians area, or other context. Population numbers are useful to prioritize contexts where there aren't enough resources to respond to all of the calls for help. They can facilitate rational HR and supply planning, and inform advocacy in cases where other actors are not taking their responsibilities to meet the needs of the population (as with inadequate food distributions). 
 
-"Head counts" are notoriously difficult to perform accurately, safely, and ethically. They can be fraught with economic incentives---people and agencies often attempt to exaggerate numbers to attract funding---and political sensitivities. Governments, in an attempt to deny the existence of problems in their territory, may attempt to pressure agencies to under-count displaced persons. Some methods of counting people are coercive and dangerous---for example people may be forced into barbed-wire enclosures for counting purposes---and MSF will not wish to participate in such activities despite needing accurate population figures. 
+"Head counts" are difficult to perform accurately, safely, and ethically. They can be fraught with economic incentives---people and agencies often attempt to exaggerate numbers to attract funding---and political sensitivities. Governments, in an attempt to deny the existence of problems in their territory, may attempt to pressure agencies to under-count displaced persons. Some methods of counting people are coercive and dangerous---for example people may be forced into barbed-wire enclosures for counting purposes---and MSF will not wish to participate in such activities despite wishing to have accurate population figures. 
 
 We have looked at a number of settings where head counts are needed, and asked
 those intervening what population information they need, what they actually have, the shortcomings of that information, and how they currently address it. We are now proposing several potential methods to improve upon the status quo. These are informed by the information we have gathered here as well as our work with the Missing Maps project.
@@ -142,14 +157,100 @@ Sometimes you need to understand the demographics, vulnerability, and specific c
 \includegraphics[width=0.9\textwidth]{images/Detailed_Household_Survey.jpeg}
 
 \section{Tool Options}
+Here we examine several families of tools for conducting population estimates. 
 
 \subsection{Aerial Mapping}
+In displacement settings where new shelters are constructed, the shelters themselves can serve as a proxy for population numbers. Shelters can be seen from above, whether by satellite, aircraft, drone, or other method providing an "eye in the sky." 
+
+This is risky; displaced people and those responsible for responding to their needs are more than capable of anticipating such an effort and constructing visible structures to fool the viewer into thinking there are more people present (a team we interviewed from the Danish Refugee Council cited a case in Kenya where refugees became aware that new satellite imagery was being collected in the area and began building additional "fake" structures).
+
+In settings where displaced people are hosted within an existing population, shelter counts are usually ineffective; you can't really tell from above whether a house contains a single family or is hosting several displaced families at a much higher density\footnote{Technologies such as infrared sensing are capable in theory of determining the number of people within a structure---an infrared camera detects body heat and can to some extent see through a roof. However, these methods are quite expensive and delicate. Even more problematic, such methods and equipment are primarily used for military purposes, and therefore are problematic, both perceptually and in the potential for abuse of the information.}. 
+
+However, in settings of recent displacement where the field team is relatively confident that visible shelters do represent a reasonably proxy for population and needs, aerial counts may be the single most effective rapid population estimation tool currently available. 
 
 \subsubsection{Drones}
+\textbf{N.B.} This section discusses the technical aspects only of drone use for displaced population estimation. It presupposes that the ethical, perceptual, and security issues have already been addressed. 
+
+Unmanned Aerial Vehicles (UAVs) or drones come in two basic flavors: fixed-wing and multirotor. 
+
+\begin{figure}[H]
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{images/Zanzibar_ebee.jpg} 
+\caption{Fixed-wing drone: Sensefly Ebee}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{images/dji-mavic-2-pro.jpg}
+\caption{Multirotor drone: DJI Mavic Pro 2}
+\label{fig:subim2}
+\end{subfigure}
+\caption{Two types of Unmanned Aerial Vehicles (UAVs or drones)}
+\label{fig:image2}
+\end{figure}
+
+
+Multirotor drones are inexpensive\footnote{A DJI Mavic Pro 2, which is capable of autonomous flight for mapping, costs about \$1600 and can be carried as hand luggage on a commercial airline flight.}, small, and quite safe. They do not require enormous expertise or resources to operate, and as they are increasingly common consumer items (frequently used for wedding photography, even in low-income and unstable countries\footnote{In Pakistan, which many people expect to be very sensitive to drones due to military uses, drone wedding photography using small multirotors is enormously popular.}) Due to the intense energy demand of hovering in mid-air, multirotor drones have much shorter flight times than fixed-wing drones, and therefore can map much less area per flight.
+
+Fixed-wing surveying drones such as the Sensefly Ebee are much more expensive than consumer multirotors\footnote{the Ebee costs around \$15,000 to purchase, but also requires licenses for proprietary software to unlock many of its functions; this can add substantial expense to operations)}. Because they make use of a wing to stay aloft, they are much more energy-efficient than multirotors and can capture imagery for a greater area per flight.
+
+A single Ebee flight can map on the order of 1km\textsuperscript{2} with an image resolution of 7cm/pixel. In a day, an experienced operator can make up to ten flights (though six is more usual). For the sake of comparison, Dadaab Refugee Camp in Kenya has an area of 2.4km\textsuperscript{2}; it could easily be covered by high-resolution imagery in a single day's operation of an Ebee or similar drone. Nearby Dagahaley camp, covering approximately 9km\textsuperscript{2}, could be covered in one to two days.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/dadaab.jpeg}
+    \caption{Dadaab Refugee Camp in Eastern Kenya}
+    \label{fig:Dadaab Refugee Camp}
+\end{figure}
+
+At the time of writing (mid-2019) the most efficient method of gathering aerial imagery on the scale of a refugee camp (several square kilometers) in sub-Saharan Africa is probably the use of an Ebee or similar fixed-wing drone. 
+
+As an example of a deployment, a team based in Tanzania with an Ebee\footnote{This information comes from an actual drone operator who often works with the authors of this report: uhurulabs.com. Uhurulabs is, of course, not the only option and we recommend that MSF choose providers based on an objective procurement process (thus ends the "not saying you have to hire our friends" disclaimer), but we are grateful for Uhurulabs' willingness to share details of their operating costs.} can deploy to anywhere within East Africa within 48 hours\footnote{A team's ability to actually enter the country depends on specific regulations and immigration procedures, but in most cases this can be managed, particularly if the activities are part of a mission that already has a reasonable relationship with local authorities; typically a Letter of Invitation from an NGO---or better yet the Ministry of Health---is sufficient to clear Immigration with an Ebee.} The cost of such a team with their equipment (two people and an Ebee with ancillary gear) is approximately \$1,000 per flying day, exclusive of travel airfare (but including all other expenses such as prep time and image processing). 
+
+At least one day is required to inform and sensitize local officials and the population of the operations. Actual flight operations are then quite rapid, covering up to 10km\textsuperscript{2} per day; all five main sites in the Dadaab refugee complex (Dadaab itself, Ifo 1 and 2, Dagahaley and Hagadera) comprise no more than 40km\textsuperscript{2} and could be flown in a single working week. 
+
+Image processing---stitching the resulting photographs into a single "orthomosaic" (a single image, straightened and aligned, visually similar to what you'd see on Google Satellite imagery)---takes several days in itself. This requires a fairly powerful computer, either local or cloud-based (supplied by the team).
+
+Once the imagery is processed, it can be "digitized" by having people trace each visible shelter or feature using mapping software (both QGIS and JOSM are free software packages that can do this very effectively). Paid teams in East Africa can typically digitize buildings for a cost of approximately \$0.02/building. Machine learning algorithms are also capable of recognizing buildings, but at the moment they remain somewhat more expensive than human digitizers (though by late 2020 this will almost certainly no longer be the case as machine learning is evolving very quickly indeed). Finally, volunteers from the Missing Maps project (missingmaps.org) can digitize buildings quite quickly for free! Missing Maps is a collaboration founded by MSF along with the Red Cross and Humanitarian OpenStreetMap Team, and as such is particularly responsive to MSF requests; either the Manson Unit at MSF-UK or the GIS Unit at MSF-Switzerland can request Missing Maps deployments (which usually result in dozens of volunteers focusing on the area of interest). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/MissingMapsMappingParty.png}
+    \caption{A Missing Maps volunteer mapathon at King's College in London, UK, focusing on Malakal in South Sudan}
+    \label{fig:Missing Maps Mapathon}
+\end{figure}
+
+The result of this example deployment would be a very high-resolution image of the entire camp complex in less than 10 days, for a total cost on the order of \$6,000 (4-5 flying days plus airfare and accommodation for two people from Tanzania). 
+
+Furthermore, the imagery can be accompanied by substantial data; the digitization process automatically enables counts, and even sophisticated estimation procedures such as categorizing buildings by surface area (to assess what is likely a residence vs a school, religious facility, or other structure, making the estimates of people per structure much more accurate). 
+
+Smaller camps would be cheaper, though the cost will not go down in a linear fashion as the expense of traveling to a site, obtaining permission to fly, sensitizing the authorities and population etc is required even for the smallest area. 
+
+A number of African countries now host local drone operators under the umbrella of the Flying Labs, a sort of quasi-commercial franchise of WeRobotics, a Geneva-based humanitarian organization dedicated to the use of drone technology for good. The Flying Labs usually have some equipment and expertise in-country, which can reduce the cost of a deployment, particularly a small one. However, they function on a cost-recovery basis and often charge as much or more than similar commercial ventures; it's important not to assume that their price is the best that can be found.
+
+There are several Ebees and other drones scattered through the MSF movement in various offices. A few informal trials have been done, but none have been conclusive or specifically focused on head counts. To our knowledge, no MSF section or office has stepped up to provide drone services to the movement, though the Innovation department of MSF-Japan has made some efforts in this direction (including the well-publicized work carrying TB samples to labs in Papua New Guinea). This probably makes sense; until the utility, security, and need for drone surveys is more clear, MSF should not invest in building internal capacity for drone use. However, pending more conclusive and systematic piloting of drone surveys (including for head counts) it may well become useful in the future for an internal MSF entity to acquire a full aerial surveying kit and expertise to provide to field missions at need. 
 
 \subsubsection{Aircraft}
+It's always been possible to take pictures out the window of an airplane or helicopter. We are aware of a few cases where this has been done in MSF projects (and in fact one of the authors of this report has previously leaned out the door of a UN helicopter to take pictures of a refugee camp for watsan planning purposes while on mission with MSF). However, for head counts, a simple snapshot doesn't provide sufficient resolution or context for population estimation (except for very small settlements, which are in any case easy to count).  
+
+Since around 2016, there has been an explosion in development of of
 
 \subsubsection{Kites and balloons!}
+
+\begin{figure}[H]
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{images/Kite_mapping_in_Brazil.jpeg} 
+\caption{Kite mapping in Brazil}
+\label{fig:kite mapping}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth]{images/Baloon_mapping.jpg}
+\caption{Balloon mapping}
+\label{fig:baloon mapping}
+\end{subfigure}
+\caption{Kite and balloon mapping can be less intimidating than drones)}
+\label{fig:image2}
+\end{figure}
+
 
 \subsection{Mobile Data Collection}
 
