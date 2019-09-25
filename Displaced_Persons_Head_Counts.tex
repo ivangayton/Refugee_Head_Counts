@@ -164,7 +164,9 @@ This method provides more detail on the demographics of the population, typicall
 \includegraphics[width=0.9\textwidth]{images/Rapid_Household_Survey.jpeg}
 
 \subsection{Detailed Household Survey}
-Sometimes you need to understand the demographics, vulnerability, and specific characteristics of people within each household. In this case you will conduct an extensive survey at each household (though this may be not be every household---it may be a subset chosen as a sample from which to extrapolate the characteristics of the whole population). 
+Sometimes you need to understand the demographics, vulnerability, and specific characteristics of people within each household. In this case you will conduct an extensive survey at each household or a subset chosen as a sample from which to extrapolate the characteristics of the whole population. 
+
+MSF has two principal entities, Epicentre and the Manson Unit (based in Paris and London respectively) with expertise in epidemiology and data science. Both have extensive documentation and expertise regarding sampling procedures; their input is certainly recommended in cases where detailed data is needed. The many strategies for determining confidence intervals of sample-based datasets are beyond the scope of this report.
 
 \noindent
 \textbf{Examples of use-cases:}
@@ -195,7 +197,8 @@ Here we examine several families of tools for conducting population estimates.
 \subsection{Comparison of Tools}
 
 \begin{center}
-\begin{tabular}{c|c|c|c}
+\begin{tabular}{|c|c|c|c|}
+\hline
      &  \\
      & 
 \end{tabular}    
@@ -210,6 +213,19 @@ This is risky; displaced people and those responsible for responding to their ne
 In settings where displaced people are hosted within an existing population, shelter counts are usually ineffective; you can't really tell from above whether a house contains a single family or is hosting several displaced families at a much higher density\footnote{Technologies such as infrared sensing are capable in theory of determining the number of people within a structure---an infrared camera detects body heat and can to some extent see through a roof. However, these methods are quite expensive and delicate. Even more problematic, such methods and equipment are primarily used for military purposes, and therefore are problematic, both perceptually and in the potential for abuse of the information.}. 
 
 However, in settings of recent displacement where the field team is relatively confident that visible shelters do represent a reasonably proxy for population and needs, aerial counts may be the single most effective rapid population estimation tool currently available. 
+
+\subsubsection{Satellite}
+There are a huge number of satellites capable of taking images of the Earth from orbit. Some are exclusively dedicated to military use, others dual-purpose, and some are purely commercial or scientific. The simplest and most useful measure of satellite data usability is resolution, normally expressed as the size of one side of a pixel of imagery—when we speak of 50cm satellite imagery we are referring to pictures for which one pixel represents a square with 50cm sides (for a total of 0.25m\textsuperscript{2} area per pixel). 
+
+Some military satellites are essentially the equivalent of the Hubble Space Telescope pointing at the Earth. The precise resolution of these is a military secret, but civilian experts believe that they are capable of achieving several-centimeter pixels. This kind of resolution may one day be available for humanitarian use!
+
+As of 2019 the best satellite imagery available for non-military use is in the 40cm range; enough to distinguish roads, buildings, and even vehicles (albeit as simple blobs). Small displaced shelters (a few meters on a side) are visible in such imagery, though no detail can be seen (you can't usually tell what they are made of, or distinguish between a human shelter or an animal shelter such as a chicken coop). Imagery in the 40cm range is also infrequently updated; there are only a few satellites available to civilians with this resolution, and it is often several years between updates in a given area (more in areas with frequent cloud, as the satellite must go overhead when the view is not obscured). In emergencies it is sometimes possible to request urgent satellite imagery; the MSF GIS Unit based in Geneva, as well as the Missing Maps project that MSF-UK is a member of, can make such requests (often this requires payment, though in the case of highly publicized disasters such as typhoons or earthquakes this may be waived as a courtesy to MSF and the larger humanitarian community). The company Maxar (formerly Digital Globe) operates many of these satellites (and are often the source of satellite imagery for popular services such as Google Earth).
+
+There are many more satellites providing low-resolution imagery that can be used to guess at changes in settlements, though not individual shelters. If only 2m resolution is required, it's usually possible to get 3-monthly updates. The company Planet Labs has dozens of such satellites. However, this kind of resolution is not sufficient to count the small structures usually seen in displacement settings, nor is it easy to spot change (such as structures that become abandoned).
+
+Finally, high-flying satellites provide imagery on the 30m resolution scale very quickly (updates on a scale of days or weeks). However, this is essentially useless for counting human structures, so is not relevant to population estimation in displacement settings\footnote{Low-resolution imagery---in the 30m range---can be taken at night, where light from human settlements provides a remarkably useful way to see human settlements. However, this doesn't usually work well for displacement settings or even very poor villages, where energy use is limited}. 
+
+The use of satellite imagery in general carries almost no perceptual or operational risk for MSF. This is primarily because it can be used discreetly; no one, including governments or militias, is likely to know about the use of satellite imagery unless MSF informs them (from an ethical perspective, it's usually preferable to do so, though there are obvious exceptions in some conflict settings such as Syria or Yemen where it may be appropriate to use satellite imagery only for internal reference and maintaining discretion). Satellite imagery requires no presence on the ground, incurs no risk to staff, and does not cause suspicion or fear amongst the population. In areas that MSF cannot physically reach but works remotely, it is often the only way to visually understand the context.
 
 \subsubsection{Drones}
 \textbf{N.B.} This section discusses the technical aspects only of drone use for displaced population estimation. It presupposes that the ethical, perceptual, and security issues have already been addressed. 
@@ -247,13 +263,13 @@ A single Ebee flight can map on the order of 1km\textsuperscript{2} with an imag
 
 At the time of writing (mid-2019) the most efficient method of gathering aerial imagery on the scale of a refugee camp (several square kilometers) in sub-Saharan Africa is probably the use of an Ebee or similar fixed-wing drone. 
 
-As an example of a deployment, a team based in Tanzania with an Ebee\footnote{This information comes from an actual drone operator who often works with the authors of this report: uhurulabs.com. Uhurulabs is, of course, not the only option and we recommend that MSF choose providers based on an objective procurement process (thus ends the "not saying you have to hire our friends" disclaimer), but we are grateful for Uhurulabs' willingness to share details of their operating costs.} can deploy to anywhere within East Africa within 48 hours\footnote{A team's ability to actually enter the country depends on specific regulations and immigration procedures, but in most cases this can be managed, particularly if the activities are part of a mission that already has a reasonable relationship with local authorities; typically a Letter of Invitation from an NGO---or better yet the Ministry of Health---is sufficient to clear Immigration with an Ebee.} The cost of such a team with their equipment (two people and an Ebee with ancillary gear) is approximately \$1,000 per flying day, exclusive of travel airfare (but including all other expenses such as prep time and image processing). 
+A commercial or non-profit drone operation team can often deploy to many areas of Africa within a few days\footnote{A team's ability to actually enter the country depends on specific regulations and immigration procedures, but in most cases this can be managed, particularly if the activities are part of a mission that already has a reasonable relationship with local authorities; typically a Letter of Invitation from an NGO---or better yet the Ministry of Health---is sufficient to clear Immigration with an Ebee.} The cost of an Ebee-equipped team (two people and an Ebee with ancillary gear) is approximately \$1,000 per flying day, exclusive of travel airfare (but including all other expenses such as prep time and image processing). 
 
 At least one day is required to inform and sensitize local officials and the population of the operations. Actual flight operations are then quite rapid, covering up to 10km\textsuperscript{2} per day; all five main sites in the Dadaab refugee complex (Dadaab itself, Ifo 1 and 2, Dagahaley and Hagadera) comprise no more than 40km\textsuperscript{2} and could be flown in a single working week. 
 
 Image processing---stitching the resulting photographs into a single "orthomosaic" (a single image, straightened and aligned, visually similar to what you'd see on Google Satellite imagery)---takes several days in itself. This requires a fairly powerful computer, either local or cloud-based (supplied by the team).
 
-Once the imagery is processed, it can be "digitized" by having people trace each visible shelter or feature using mapping software (both QGIS and JOSM are free software packages that can do this very effectively). Paid teams in East Africa can typically digitize buildings for a cost of approximately \$0.02/building. Machine learning algorithms are also capable of recognizing buildings, but at the moment they remain somewhat more expensive than human digitizers (though by late 2020 this will almost certainly no longer be the case as machine learning is evolving very quickly indeed). Finally, volunteers from the Missing Maps project (missingmaps.org) can digitize buildings quite quickly for free! Missing Maps is a collaboration founded by MSF along with the Red Cross and Humanitarian OpenStreetMap Team, and as such is particularly responsive to MSF requests; either the Manson Unit at MSF-UK or the GIS Unit at MSF-Switzerland can request Missing Maps deployments (which usually result in dozens of volunteers focusing on the area of interest). 
+Once the imagery is processed, it can be "digitized" by having people trace each visible shelter or feature using mapping software (both QGIS and JOSM are free software packages that can do this very effectively). Paid teams in East Africa can typically digitize buildings for a cost of approximately \$0.02/building. Machine learning algorithms are also capable of recognizing buildings, but at the moment they remain somewhat more expensive than human digitizers (though by late 2020 this will almost certainly no longer be the case as machine learning is evolving very quickly indeed). Finally, volunteers from the Missing Maps project (missingmaps.org)\footnote{Missing Maps is a collaboration founded by MSF along with the Red Cross and Humanitarian OpenStreetMap Team, and as such is particularly responsive to MSF requests; either the Manson Unit at MSF-UK or the GIS Unit at MSF-Switzerland can request Missing Maps deployments (which usually result in dozens of volunteers focusing on the area of interest).} can digitize shelters---whether from drone, aircraft, or high-resolution satellite imagery---quite quickly (a few days for an urgent activation) for free!  
 
 \begin{figure}[H]
     \centering
@@ -284,9 +300,9 @@ Since around 2016, there has been an explosion in development of of \textit{phot
     \label{fig:Photogrammetry}
 \end{figure}
 
-Commercial software such as Pix4D, or open-source software such as OpenDroneMap (the authors' personal favorite) allow photographs taken from the air to be combined. 
+Commercial software such as Pix4D, Agisoft, SiteScan, or open-source software such as OpenDroneMap allow photographs taken from the air to be combined into a single image. 
 
-MSF missions often have access to aircraft, whether it be small planes used to fly in and out of projects or UN helicopters in coordinated disaster responses. In many cases it's possible for minimal expense---or even free---to overfly a project area and take pictures. Small aircraft pilots will often allow MSF passengers to affix a camera to the outside of the plane (the classic GoPro-on-a-Cessna protocol).
+MSF missions often have access to aircraft, whether it be small planes used to fly in and out of projects or UN helicopters in coordinated disaster responses. In many cases it's possible for minimal expense---or even free---to overfly a project area and take pictures. Small aircraft pilots will often allow MSF passengers to affix a camera to the outside of the plane. There is no established GoPro-on-a-Cessna protocol, but it's actually fairly easy to affix a downward-facing consumer camera set to snap a picture once per second on the wing spar of a small plane. The authors are aware of an MSF mission in Central Africa where an expat logistician affixed a GoPro on the airplane going to her project, informally persuaded the pilot to circle the landing site a few times (a common procedure to assess landing strip safety anyway) and subsequently used the online version of photogrammetry suite (Pix4D cloud) to create a remarkably high-quality image of the village where the project was based (this was done discreetly, though with the permission of the coordination team, and the results used only internally within the MSF team). 
 
 \begin{figure}[H]
     \centering
@@ -298,7 +314,7 @@ MSF missions often have access to aircraft, whether it be small planes used to f
 Photographs taken in this fashion were, in previous years, mostly of novelty value. However, by running them through a photogrammetry package they can be made into seriously useful project assets capable of supporting frequent structure counts to estimate population and change.
 
 \subsubsection{Kites and Balloons}
-Where aircraft and drones are unavailable or sensitive, kites and balloons can provide a surprisingly robust method to gather aerial imagery. This would not be the best way to gather rapid imagery (it requires time, patience, and cooperative weather). It's not actually cheap; a proper kite or balloon mapping kit can easily cost as much as or more than a small drone such as a DJI Mavic Pro (around \$1,600), but once you have it you can use it cheaply for as long as you like.
+Where aircraft and drones are unavailable or sensitive, kites and balloons can provide a surprisingly robust method to gather aerial imagery. This would not be the best way to gather rapid imagery (it requires time, patience, and cooperative weather). It's not actually cheap; a proper kite or balloon mapping kit can easily cost \$1,600, but once you have it you can use it cheaply for as long as you like (or until you crash it).
 
 In a setting where frequent image updates were desired, but the speed of acquisition was not overly critical, balloon or kite mapping might be a solution.
 
@@ -317,7 +333,14 @@ In a setting where frequent image updates were desired, but the speed of acquisi
 \label{fig:image2}
 \end{figure}
 
-Ultimately, balloons and kites are not likely to be a major component of a sensible Head Count toolkit; their use is limited to a narrow slice of contexts where aerial imagery is desired but drones or aircraft are impractical for some reason. However, they remain an option that could make the occasional project team quite happy.
+Balloon kits are significantly easier and safer to operate than kites. However, they usually\footnote{Hot-air balloon kits do exist. However, the balloons are enormous; hot air is much less buoyant than helium, and fire safety is an issue.} require helium (available for purchase in African cities, but not in rural areas) and do not work in even moderately windy conditions. 
+
+Where conditions and supplies allow, a balloon mapping kit is remarkably easy to use! Simply fill the balloon with helium from a purchased or rented tank, start the camera (some versions have remote-triggered cameras to avoid taking unnecessary pictures) and allow the balloon to rise up on a tether that looks and functions much like a fishing line. The balloon should be started upwind of the area of interest, allowed to drift across it (walking with the tether), and brought down after crossing over the whole area. In some cases a single flight is sufficient, but usually several flights (in downwind "strips" are necessary to capture an area more than a few dozen hectares. 
+
+Kites are more self-contained, but require a steady, relatively strong wind. More importantly, kite mapping requires a lot of operator skill and experience; an untrained person without a skilled trainer is far more likely to create a smashed camera than a set of usable images! 
+
+Use of balloons and kites is likely to be limited to a narrow slice of contexts where aerial imagery is desired but drones or aircraft are impractical for some reason. However, they remain an option that could make the occasional project team quite happy.
+
 
 \subsection{Mobile Data Collection}
 
